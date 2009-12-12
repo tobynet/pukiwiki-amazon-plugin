@@ -114,6 +114,10 @@ EOD;
         $div .= "<input type='hidden' name='SubscriptionId' value='" . AWS_SUBSCRIPTION_ID . "'>";
       } 
       else $div .= "<div class='amazon_sub' style='text-align:$align'>";
+
+      $div .= '<a href="' . AMAZON_SHOP . $check->asin.  '/'
+          . AMAZON_AID . '">' . $info->items['title'] . '</a>';
+      
       $div .= $info->items['author'] . "<br />";
       $div .= $info->items['manufact'] . "<br />";
       if($info->items['lprice'] != '')
@@ -129,7 +133,7 @@ EOD;
       if($info->items['asaved'] != '')
       {
         $div .= "<b>" . mb_convert_encoding("OFF", SOURCE_ENCODING, DISPLAY_ENCODING) . ":</b><span style='color: #990000;'> " . $info->items['asaved'];
-        $div .= "(" . $info->items['psaved'] . mb_convert_encoding("¡ó", SOURCE_ENCODING, DISPLAY_ENCODING) . ")</b></div>";
+        $div .= "(" . $info->items['psaved'] . mb_convert_encoding("¡ó", SOURCE_ENCODING, DISPLAY_ENCODING) . ")</span></b></div>";
       }
       $div .= "<div class='amazon_avail' style='text-align:$align'>";
       if($info->items['avail'] != '')
