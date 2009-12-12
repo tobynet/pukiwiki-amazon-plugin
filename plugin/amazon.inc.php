@@ -158,6 +158,7 @@ EOD;
         if ($iscargo) $div .= "<br /></form>";
       }
       if ($item == 'content') $div .= "<br />" . $info->items['content'] . '<div style="clear:both"></div>';
+      $div .= "</div>";
     } 
     else 
     {
