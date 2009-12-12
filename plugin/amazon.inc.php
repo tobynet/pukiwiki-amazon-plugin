@@ -144,7 +144,7 @@ EOD;
       if($info->items['asaved'] != '')
       {
         $div .= "<b>" . mb_convert_encoding("OFF", SOURCE_ENCODING, DISPLAY_ENCODING) . ":</b><span style='color: #990000;'> " . $info->items['asaved'];
-        $div .= "(" . $info->items['psaved'] . mb_convert_encoding("％", SOURCE_ENCODING, DISPLAY_ENCODING) . ")</span></b></div>";
+        $div .= "(" . $info->items['psaved'] . mb_convert_encoding("％", SOURCE_ENCODING, DISPLAY_ENCODING) . ")</span></b>";
       }
       $div .= "<div class='amazon_avail' style='text-align:$align'>";
       if($info->items['avail'] != '')
@@ -157,8 +157,8 @@ EOD;
         $div .= "<b>" . mb_convert_encoding("在庫状態", SOURCE_ENCODING, DISPLAY_ENCODING) . ":</b> " . mb_convert_encoding("現在在庫がありません", SOURCE_ENCODING, DISPLAY_ENCODING) . "</div>";
         if ($iscargo) $div .= "<br /></form>";
       }
-      if ($item == 'content') $div .= "<br />" . $info->items['content'] . '<div style="clear:both"></div>';
       $div .= "</div>";
+      if ($item == 'content') $div .= "<br />" . $info->items['content'] . '<div style="clear:both"></div>';
     } 
     else 
     {
