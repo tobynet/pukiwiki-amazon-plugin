@@ -123,7 +123,7 @@ EOD;
       else $div .= "<div class='amazon_sub' style='text-align:$align'>";
 
       $div .= '<a href="' . AMAZON_SHOP . $check->asin.  '/'
-          . AMAZON_AID . '">' . $info->items['title'] . '</a>';
+          . AMAZON_AID . '">' . $info->items['title'] . '</a><br />';
       
       $div .= $info->items['author'] . "<br />";
       $div .= $info->items['manufact'] . "<br />";
