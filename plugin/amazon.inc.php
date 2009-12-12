@@ -124,9 +124,13 @@ EOD;
 
       $div .= '<a href="' . AMAZON_SHOP . $check->asin.  '/'
           . AMAZON_AID . '">' . $info->items['title'] . '</a><br />';
-      
-      $div .= $info->items['author'] . "<br />";
-      $div .= $info->items['manufact'] . "<br />";
+
+      if($info->items['author'] != '') {
+        $div .= $info->items['author'] . "<br />";
+      }
+      if($info->items['manufact'] != '') {
+        $div .= $info->items['manufact'] . "<br />";
+      }
       if($info->items['lprice'] != '')
       {
         $div .= "<b>" . mb_convert_encoding("»²¹Í²Á³Ê", SOURCE_ENCODING, DISPLAY_ENCODING) . ":</b><s> " . $info->items['lprice'];
