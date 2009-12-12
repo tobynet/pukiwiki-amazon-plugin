@@ -21,6 +21,10 @@ define('AMAZON_CARGO','./image/remote-buy-jp.gif');
 define('PLUGIN_AMAZON_IMAGE_SIZE', 'MediumImage');
 // 表示エンコード utf-8, sjis, euc-jp, jis, ascii
 define('DISPLAY_ENCODING', 'euc-jp');
+// デフォルトの表示形式
+define('AMAZON_PLUGIN_DEFAULT_ITEM_TYPE', '');
+// デフォルトの整列形式
+define('AMAZON_PLUGIN_DEFAULT_ALIGN', 'right');
 
 ///////////////////////////////////////////////// 変更してはならない箇所
 define('AMAZON_SHOP','http://www.amazon.co.jp/exec/obidos/ASIN/');
@@ -76,10 +80,13 @@ EOD;
 
   $align = strtolower(trim($aryargs[1]));
   if ($align == 'clear') return '<div style="clear:both"></div>'; // 改行挿入
-  if ($align == '') $align = 'right';
+  if ($align == '') $align = AMAZON_PLUGIN_DEFAULT_ALIGN;
   if (preg_match("/^(right|left|center)$/", $align) == false) return false;
 
   $item = htmlspecialchars(trim($aryargs[2])); // for XSS
+  if ($item == '') {
+    $item = AMAZON_PLUGIN_DEFAULT_ITEM_TYPE;
+  }
 
   $check = new amazon_check_asin(htmlspecialchars($aryargs[0])); // for XSS
   if ($check->is_asin) 
